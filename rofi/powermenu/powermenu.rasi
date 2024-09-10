@@ -1,0 +1,90 @@
+configuration {
+	modi:				            "drun";
+	font:				            "Rubik 10";
+	display-drun: 			        "";
+	icon-theme: "Numix";
+	show-icons: true;
+}
+
+@theme "/dev/null"
+
+* {
+	bg:				                #000000;
+	fg:				                #ffffff;
+	button:				            #B5B5B5;
+	background-color:		        @bg;
+	text-color:			            @fg;
+}
+
+window {
+	location: center;
+	anchor: center;
+	transparency:                   "real";
+	border-radius:                  7px;
+    border:                         2px;
+    border-color:                   white;
+	width:			    	        25%;
+	padding: 			            20px;
+}
+
+prompt { enabled: false; }
+
+entry {
+	placeholder:			        "Search for Apps";
+	cycle: false;
+	padding:                        5px 2% 5px 2%;
+	background-color:               @button;
+    placeholder-color:              @bg;
+    text-color:                     @bg;
+}
+
+inputbar {
+	enabled: 						false;
+	children: 			            [ prompt, entry ];
+	background-color:               @button;
+	text-color:                     @bg;
+	expand:                         false;
+	border-radius:                  6px;
+	padding:                        8px;
+}
+
+listview {
+	columns:                        1;
+	lines:	                        5;
+	cycle:                          false;
+	dynamic:                        true;
+	layout:                         horizontal;
+}
+
+mainbox {
+	children:                       [ inputbar, listview ];
+	spacing:                       	2%;
+
+}
+
+element {
+	border-radius:                  999px;
+		padding: 20px 15px 20px 0px;
+	children: 						[element-icon, element-text];
+}
+element-icon {
+	size: 							24px;
+	background-color: inherit;
+
+ }
+
+element-text {
+	expand:                         true;
+	horizontal-align:                 0.5;
+	background-color:               inherit;
+    text-color:                     inherit;
+    font: "MesloLGSDZ Nerd Font 24";
+    border-radius: 999px;
+}
+
+element selected {
+	background-color:               @fg;
+	text-color:                     @bg;
+	border-radius:                  6px;
+	border-radius: 999px;
+}

@@ -1,0 +1,99 @@
+configuration {
+	modi:				            "drun";
+	font:				            "Rubik 10";
+	display-drun: 			        "";
+	icon-theme: "Numix";
+	show-icons: true;
+}
+
+@theme "/dev/null"
+
+* {
+	bg:				                #000000;
+	fg:				                #ffffff;
+	button:				            #B5B5B5;
+	background-color:		        @bg;
+	text-color:			            @fg;
+}
+
+window {
+	transparency:                   "real";
+	border-radius:                  0px;
+    border:                         2px 0px 2px 0px;
+    border-color:                   white;
+	width:			    	        100%;
+	padding: 			            20px;
+	location: 			            center;
+}
+
+prompt { enabled: false; }
+
+entry {
+	placeholder:			        "Search for Apps";
+	cycle: false;
+	padding:                        5px 2% 5px 2%;
+	background-color:               @button;
+    placeholder-color:              @bg;
+    text-color:                     @bg;
+}
+
+inputbar {
+	enabled: false;
+	children: 			            [ prompt, entry ];
+	background-color:               @button;
+	text-color:                     @bg;
+	expand:                         false;
+	border-radius:                  6px;
+	padding:                        8px;
+}
+
+listview {
+	columns:                        1;
+	lines:	                        8;
+	cycle:                          false;
+	dynamic:                        true;
+	layout:                         vertical;
+}
+
+mainbox {
+	children:                       [ inputbar, listview ];
+	spacing:                       	2%;
+
+}
+
+element {
+	border-radius:                  0%;
+	padding:                        5px 0px 5px 0px;
+	children: 						[element-icon, element-text];
+}
+element-icon {
+	size: 							30px;
+	margin:							0px 0px 0px 10px;
+	background-color: inherit;
+
+ }
+
+element-text {
+	expand:                         true;
+	vertical-align:                 0.5;
+	margin:                         0.5% 3% 0% 3%;
+	background-color:               inherit;
+    text-color:                     inherit;
+}
+
+element selected {
+	background-color:               @fg;
+	text-color:                     @bg;
+	border-radius:                  6px;
+	padding-left:                   10px; /* Slight padding for text area */
+}
+
+element selected element-icon {
+	background-color: inherit; /* Icon background stays transparent */
+}
+
+element selected element-text {
+	background-color: @fg; /* Ensure text background color applies */
+	padding-left: 5px; /* Adjust for better alignment */
+	margin: 0 300px; /* Shift text right to avoid icon */
+}

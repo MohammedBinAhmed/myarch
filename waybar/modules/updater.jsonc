@@ -1,0 +1,9 @@
+"custom/updater": {
+    "format": "  {}",
+    "exec": "checkupdates | wc -l",
+    "exec-if": "[[ $(checkupdates | wc -l) ]]",
+    "interval": 15,
+    "on-click": "kitty -T update paru -Syu || yay -Syu && notify-send 'The system has been updated'",
+    "tooltip": true,
+    "tooltip-format": "Left Click: Update System\nArch Linux Only",
+  },

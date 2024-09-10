@@ -1,0 +1,22 @@
+set default-bg "#000000"
+set default-fg "#000000"
+
+
+set inputbar-bg                 "#ffffff"
+set inputbar-fg                 "#000000"
+
+map f toggle_fullscreen
+map [fullscreen] f toggle_fullscreen
+
+map + zoomin
+map - zoomout
+
+set recolor true
+
+set font "SpaceMono Nerd Font 12"
+
+set adjust-open "best-fit"
+
+set guioptions ""
+
+set pages-per-row 1

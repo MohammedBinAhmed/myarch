@@ -1,0 +1,5 @@
+"custom/theme-switcher": {
+      "format": "󰏘",
+      "tooltip": false,
+      "on-click": "~/.config/hypr/scripts/random_wall.sh",
+    },
